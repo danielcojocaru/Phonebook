@@ -1,0 +1,8 @@
+<div class="with-inputs">
+<input type="text" class='{{inputClass[0]}}' [(ngModel)]="inputVal[0]" (focus)="focusFunction(0)" (blur)="blurFunction(0)"/>
+<div style="color:red">{{lblMessage[0]}}</div>
+<input type="text" class='{{inputClass[1]}}'  [(ngModel)]="inputVal[1]" (focus)="focusFunction(1)" (blur)="blurFunction(1)" />
+<div style="color:red">{{lblMessage[1]}}</div>
+</div>
+<button class="btn btn-default" (click)="addNewContact()">Add</button>
+<br class="clear"/>

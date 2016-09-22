@@ -1,0 +1,8 @@
+<app-newcontact (onNewContact)="addNewContactAndRefresh($event)"></app-newcontact>
+<app-contactslist
+  (onTyping)="refreshListByWord($event)"
+  (onDeletingContact)="deleteContactAndRefresh($event)"
+  (onEditingContact)="editContactAndRefresh($event)"
+  [contacts]='contacts'
+  [activeContacts]='activeContacts'>
+</app-contactslist>

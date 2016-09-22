@@ -1,0 +1,43 @@
+<br/>
+<table class="blue">
+  <thead>
+    <tr>
+      <th style="width:55px"></th>
+      <th style="width:250px">Name</th>
+      <th style="width:250px">Phone</th>
+      <th style="width:2px"></th>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        <input type="text" class='{{inputClass}}' [(ngModel)] = "nameInput"
+               (input)="fireTypingEvent($event.target.value)" (click)="searchClicked()"
+               (focus)="focusFunction()" (blur)="blurFunction()"/>
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let name of orderedContactKeys()">
+    <td>
+      <div clas='edit-container right'>
+        <div class="left edit-contact" (click)="fireDeleteContact(name)">♻</div>
+        <div class="left edit-contact" (click)="editContact(name)">✎</div>
+      </div>
+
+    </td>
+    <td>
+      <div class="first-load {{activeContacts[name]}}">{{name}}</div>
+      <input type="text" class="second-load {{activeContacts[name]}}" [(ngModel)] = "nameEdit"/>
+    </td>
+    <td>
+      <div class="first-load {{activeContacts[name]}}">{{contacts[name]}}</div>
+      <input type="text" class="second-load {{activeContacts[name]}}" [(ngModel)] = "phoneEdit"/>
+    </td>
+    <td>
+      <div class="edit-contact second-load {{activeContacts[name]}}" (click)="fireEditContact(name)">✔</div>
+    </td>
+  </tr>
+</table>

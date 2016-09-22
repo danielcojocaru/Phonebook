@@ -1,0 +1,15 @@
+.empthy{
+  color: #CCCCCC;
+}
+
+.clicked{
+  color: black;
+}
+
+.error-input{
+  color: red;
+}
+
+input,button{
+  margin: 5px;
+}
